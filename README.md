@@ -62,7 +62,7 @@ Create a config.json file in the root directory. It should look like this:
 - !remove <index> - Remove a video from the queue.
 
 - !clearqueue - Clear the entire queue.
-- 
+  
 **Playback Control**
   - !join <guildId> <channelId> - Join a voice channel.
 
