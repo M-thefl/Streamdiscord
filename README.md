@@ -21,7 +21,6 @@ Before you run the bot, ensure you have the following installed:
 - [Node.js](https://nodejs.org/) (v16 or higher)
 - [FFmpeg](https://ffmpeg.org/download.html) (for video processing)
 - [Streamlink](https://streamlink.github.io/) (for Twitch streaming)
-- [A Discord bot token](https://discord.com/developers/applications) to interact with Discord.
 
 ## Installation
 
