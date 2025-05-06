@@ -68,8 +68,7 @@ client.on("messageCreate", async (msg) => {
           queue.push({ type: "url", source: input, title: input });
           msg.channel.send(`🌐 Added video from URL: **${input}**`);
         } 
-
-        if (command === "yt") {
+        else if (type === "yt") {
           try {
             const videoUrl = input;
             const info = await ytdl.getInfo(videoUrl);
@@ -81,16 +80,14 @@ client.on("messageCreate", async (msg) => {
               title: info.videoDetails.title
             });
         
-            msg.channel.send(`▶️ Added YouTube video: **${info.videoDetails.title}**`);        
+            msg.channel.send(`▶️ Added YouTube video: **${info.videoDetails.title}**`);
             if (!isPlaying) playNext(msg);
           } catch (err) {
             console.error("YouTube streaming error:", err);
             return msg.channel.send("❌ Failed to stream YouTube video.");
           }
         }
-
-
-
+        
         else if (type === "twitch") {
           const twitchUrl = input;
       
@@ -243,9 +240,9 @@ async function playNext(msg) {
 
   try {
     const { command, output } = prepareStream(source, {
-      width: 1920,
-      height: 1080,
-      frameRate: 60,
+      width: 1280,
+      height: 720,
+      frameRate: 30,
       bitrateVideo: 2000,
       videoCodec: Utils.normalizeVideoCodec('H264'),
       h26xPreset: "veryfast",
